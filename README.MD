@@ -24,17 +24,20 @@ println!("constante = {K_CEST_UNE_CONSTANTE}");
 
 
 ## Mutable variables
+mut ne concerne qu'un type, pas possible de changer, -> si besoin de changer : shadowing
+
     let mut x = 5;
     println!("La valeur de x est : {x}");
     x = 6;
     println!("La valeur de x est : {x}");
 
-mut ne concerne qu'un type, pas possible de changer, -> si besoin de changer : shadowing
 
 
 
 
 ### Shadowing
+Creation d'une nouvelle variable avec le même nom que la précédente, mais avec une nouvelle valeur, et un type différent si besoin.
+
     let c = 5;
     let c = c + 1;
 
@@ -44,3 +47,11 @@ mut ne concerne qu'un type, pas possible de changer, -> si besoin de changer : s
     }
 
     println!("Valeur de c = {c}");
+
+
+### Fonction avec retour
+Mettre le type de retour après les paramètres de la fonction : ->
+ 
+    fn sale_price(price: i64) -> i64 {
+        price / 2
+    }

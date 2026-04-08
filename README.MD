@@ -55,3 +55,4 @@ Mettre le type de retour après les paramètres de la fonction : ->
     fn sale_price(price: i64) -> i64 {
         price / 2
     }
+

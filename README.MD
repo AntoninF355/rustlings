@@ -56,3 +56,10 @@ Mettre le type de retour après les paramètres de la fonction : ->
         price / 2
     }
 
+Pas besoins de ; pour un retour de resultat implicite (function 5)
+
+Est-ce pour toutes les fonctions ?
+Oui, la règle “dernière expression sans ; = valeur retournée” s’applique à toutes les fonctions et tous les blocs (if, match, etc.).
+
+Ca doit correspondre au type de retour de la fonction
+return explicite est possible aussi

@@ -114,3 +114,17 @@ On peut aussi accéder à un élément d'un tuple en utilisant un point suivi de
     let six_point_four = t.1;
     ... etc
 
+### Vectors
+
+Collecction, structure de données qui stocke les valeurs les unes à côté des autres dans la mémoire. Uniquement le même type.
+
+fn main() {
+    let v: Vec<i32> = Vec::new();
+}
+
+En général utiliser Vec<T>, Rust trouvera le type avec ce qui est donné en valeur
+
+Plus pratique, la macro vec! : 
+    let v = vec![1, 2, 3];
+
+    

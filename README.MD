@@ -118,13 +118,25 @@ On peut aussi accéder à un élément d'un tuple en utilisant un point suivi de
 
 Collecction, structure de données qui stocke les valeurs les unes à côté des autres dans la mémoire. Uniquement le même type.
 
-fn main() {
-    let v: Vec<i32> = Vec::new();
-}
+    fn main() {
+        let v: Vec<i32> = Vec::new();
+    }
 
-En général utiliser Vec<T>, Rust trouvera le type avec ce qui est donné en valeur
+En général utiliser "Vec< T >", Rust trouvera le type avec ce qui est donné en valeur
 
-Plus pratique, la macro vec! : 
+Plus pratique, la macro vec! :
+
     let v = vec![1, 2, 3];
 
-    
+
+Update un vector : 
+Méthode avec fonction push
+
+    output.push(2 * element);
+
+Iteration avec une map
+
+    // Advanced note: This method is more efficient because it automatically
+    // preallocates enough capacity. This can be done manually in `vec_loop`
+    // using `Vec::with_capacity(input.len())` instead of `Vec::new()`.
+    input.iter().map(|element| 2 * element).collect()

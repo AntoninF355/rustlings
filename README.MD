@@ -140,3 +140,46 @@ Iteration avec une map
     // preallocates enough capacity. This can be done manually in `vec_loop`
     // using `Vec::with_capacity(input.len())` instead of `Vec::new()`.
     input.iter().map(|element| 2 * element).collect()
+
+
+## Ownership
+
+### Stack and Heap
+
+#### Stack (pile de plateau)
+stack and the heap are parts of memory available to your code to use at runtime, 
+The stack stores values in the order it gets them and removes the values in the opposite order. Last in, first out (LIFO). 
+Think of a stack of plates: When you add more plates, you put them on top of the pile, and when you need a plate, you take one off the top. 
+Adding data is called pushing onto the stack, and removing data is called popping off the stack. 
+
+All data stored on the stack must have a known, fixed size. Data with an unknown size at compile time or a size that might change must be stored on the heap instead.
+
+#### Heap (Restaurant cherchant une table libre pour ton groupe)
+The heap is less organized: When you put data on the heap, you request a certain amount of space. The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use, and returns a pointer, which is the address of that location. This process is called allocating on the heap and is sometimes abbreviated as just allocating (pushing values onto the stack is not considered allocating). Because the pointer to the heap is a known, fixed size, you can store the pointer on the stack, but when you want the actual data, you must follow the pointer. Think of being seated at a restaurant. When you enter, you state the number of people in your group, and the host finds an empty table that fits everyone and leads you there. If someone in your group comes late, they can ask where you’ve been seated to find you.
+
+
+
+Ajouter au stack est plus rapide, car heap fait de la recherche d'espace libre
+La recherche dans la heap est plus lente car on suit un pointeur à la mémoire
+
+
+### Les règles ownership
+
+- Each value in Rust has an owner.
+- There can only be one owner at a time.
+- When the owner goes out of scope, the value will be dropped.
+
+
+### Type String
+
+différent du type string literal, exemple let s = "ravuuuus"
+let s = String::from("Ravuuus"); type string, créer depuis un string literal
+
+String utile pour une chaine qu'on ne connait pas à l'avance et à stocker, c'est gerer par le heap
+
+string mutable
+    
+    let mut s = String::from("hello");
+
+    s.push_str(", world!");
+
